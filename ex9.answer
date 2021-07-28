@@ -1,0 +1,7 @@
+Difference between DOS/Windows & Unix/Linux line endings
+--------------------------------------------------------
+
+* DOS line endings use carriage return (\r) followed by line feed (\n) at the end of a line \r\n
+* Unix line endings use only line feed (\n) at the end of a line \n
+* command "dos2unix <filename>" will ensure DOS line endings are correctly translated to Unix when transferring
+  files from Windows to Linux
