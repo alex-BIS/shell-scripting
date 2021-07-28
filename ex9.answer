@@ -2,6 +2,13 @@ Difference between DOS/Windows & Unix/Linux line endings
 --------------------------------------------------------
 
 * DOS line endings use carriage return (\r) followed by line feed (\n) at the end of a line \r\n
+
+* carriage return is used to return the print head to the first position at the start of the line
+* it was used in conjunction with line feed, which moved the page up
+* chars printed after the carriage return, on early computers using Teletype machines, would often
+  print as a smudge in the middle of the page as the print head was moving back to the first position
+
 * Unix line endings use only line feed (\n) at the end of a line \n
+
 * command "dos2unix <filename>" will ensure DOS line endings are correctly translated to Unix when transferring
   files from Windows to Linux
