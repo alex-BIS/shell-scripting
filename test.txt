@@ -1,0 +1,3 @@
+this is a test text file
+hopefully it contains carriage return symbols, as well as newline chars
+i guess we will see.
