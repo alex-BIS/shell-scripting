@@ -13,6 +13,16 @@ myfunc()
 # Main script starts here
 a=Hello
 b=World
+
+# this will cause the below echos to print "Hello World" as $a 
+# will remain unchanged since myfunc will be called in a new shell
+# --------------
+# myfunc $a $b | tee ex14_out.txt
+
+# this will cause the below echos to print "Goodbye Cruel World"
+# --------------
 myfunc $a $b
+
+# final output
 echo "a is $a"
 echo "b is $b"
