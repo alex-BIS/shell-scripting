@@ -7,10 +7,11 @@ do
   read INPUT
   
   # checking if text entered was the exit command
-  if [ "$INPUT" == "q" ] 
-  then
+  if [ "$INPUT" = "q" ] ; then
     echo "quitting..."
-  else
-    echo "you typed ${INPUT}"
+    elif [ "$INPUT" = "some text" ] ; then
+      echo "wow you think you're funny, huh?"
+    else
+      echo "you typed ${INPUT}"
   fi
 done
