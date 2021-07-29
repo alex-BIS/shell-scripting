@@ -1,4 +1,3 @@
-#!/bin/bash
 
 # func1 & func2 will also accept "yes" or "ye" etc. as input
 # however, func3 & func4 will not as their if statements 
@@ -6,8 +5,20 @@
 
 add_record()
 {
-  # to-do
-  echo "this is the add_record function"
+  
+  NAME=""
+  while [[ $(wc -w <<< "$NAME") -le 1 ]] ; do
+    read -p "Enter full name: " NAME
+  done
+ 
+  read -p "Enter email address: " EMAIL
+  read -p "Enter phone number: " PHONE
+
+  # concatenate inputs to a single variable
+  ENTRY="$(echo "$NAME" | cut -d " " -f1)|$(echo "$NAME" | cut -d " " -f2)|${EMAIL}|${PHONE}"
+  
+  # output the entry to addressBook file
+  echo "$ENTRY" >> addressBook.txt
 }
 
 # allows choice of each function
@@ -40,19 +51,25 @@ func1()
 
 func2()
 {
+  echo
   echo "Would you like to enter another record? (Y/N)"
   read CONTINUE
   
   case "$CONTINUE" in
     "Y"*)
+      echo
       add_record ;;
     "y"*)
+      echo
       add_record ;;
     "N")
       exit ;;
     "n")
       exit ;;
   esac
+
+  # calling itself
+  func2
 }
 
 func3()
@@ -82,6 +99,3 @@ func4()
     exit
   fi
 }
-
-# start of script
-selecta
